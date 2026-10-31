@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 3 - Local Storage</title>
+</head>
+<body>
+
+    <h2>My Notes</h2>
+
+    <input type="text" id="note" placeholder="Enter your note">
+
+    <button onclick="saveNote()">Save</button>
+
+    <script>
+        // Show saved note when page opens
+        window.onload = function() {
+            document.getElementById("note").value =
+                localStorage.getItem("note") || "";
+        };
+
+        // Save note in local storage
+        function saveNote() {
+            let text = document.getElementById("note").value;
+
+            localStorage.setItem("note", text);
+
+            alert("Note saved successfully!");
+        }
+    </script>
+
+</body>
+</html>
